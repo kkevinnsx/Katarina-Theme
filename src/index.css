@@ -57,7 +57,7 @@ body {
   }
 
   .nav-hover-btn {
-    @apply relative ms-10 font-general text-xs uppercase
+    @apply relative ms-10 text-xs uppercase
            text-blue-50 after:absolute after:-bottom-0.5
            after:left-0 after:h-[2px] after:w-full after:origin-bottom-right
            after:scale-x-0 after:bg-neutral-800 after:transition-transform
@@ -88,11 +88,11 @@ body {
   }
 
   .champion-heading {
-    @apply uppercase font-zentry font-black text-5x1 sm:right-10 sm:text-9x1 md:text-9x1 lg:text-[12rem];
+    @apply uppercase font-black sm:right-10;
   }
 
   .about-subtext {
-    @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
+    @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center text-lg md:max-w-[34rem];
   }
 
   .about-image {
@@ -100,18 +100,18 @@ body {
   }
 
   .animated-title {
-    @apply flex flex-col gap-1 text-7x1 uppercase leading-[.8] text-white sm:px-32 md:text-[6rem]; 
+    @apply flex flex-col gap-1 uppercase leading-[.8] text-white sm:px-32 md:text-[6rem]; 
   }
 
   .animated-word {
-    @apply special-font font-zentry font-black opacity-0;
+    @apply font-black opacity-0;
     transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
     transform-origin: 50% 50% -150px !important;
     will-change: opacity, transform;
   }
 
   .bento-tilt_1 {
-    @apply relative border-hsla col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+    @apply relative col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out;
   }
 
   .bento-tilt_2 {
@@ -119,7 +119,7 @@ body {
   }
 
   .bento-title {
-    @apply uppercase md:text-6xl text-4xl font-black font-zentry;
+    @apply uppercase md:text-6xl text-4xl font-black;
   }
 
   .story-img-container {
