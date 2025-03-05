@@ -3,6 +3,7 @@
 body {
   font-family: 'General Sans', sans-serif;
   width: 100dvw ;
+  background-color: #dfdff0;
   background-origin: #dfdff0;
   overflow-x: hidden;
 }
