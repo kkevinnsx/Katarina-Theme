@@ -1,12 +1,12 @@
 import React from "react";
 import Champion from "./components/champion";
+import About from "./components/about";
 
 const App = () => {
   return(
     <main className="relative min-h-screen w-screen overflow-x-hidden">
       <Champion />
-      
-      <section className="z-0 min-h-screen bg-blue-500"/>
+      <About />
     </main>
   )
 }
