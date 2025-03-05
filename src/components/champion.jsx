@@ -88,7 +88,7 @@ const Champion = () => {
 
     return (
         <div className="relative h-dvh w-screen overflow-x-hidden">
-            {isLoading && (
+            {/* {isLoading && (
                 <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
                     <div className="three-body">
                         <div className="three-body__dot" />
@@ -96,7 +96,7 @@ const Champion = () => {
                         <div className="three-body__dot" />
                     </div>
                 </div>
-            )}
+            )} */}
             <div id="video-frame" className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75">
                 <div>
                     <video
@@ -110,7 +110,7 @@ const Champion = () => {
                     />
 
                     <div 
-                        className="absolute inset-0 flex items-center justify-center z-50 cursor-pointer"
+                        className="absolute inset-0 flex items-center justify-center z-40 cursor-pointer"
                         onClick={handleVideoClick}
                     >
                         <div className="mask-clip-path size-64 overflow-hidden rounded-lg">
@@ -132,12 +132,21 @@ const Champion = () => {
                 <h1 className="special-font champion-heading absolute bottom-5 right-5 z-40 text-blue-75">
                     <b>Blade</b>
                 </h1>
-                <div className="absolute left-0 top-0 z-40 size-full">
+                <div className="absolute left-0 top-0 size-full">
                     <div className="mt-24 px-5 sm:px-10">
                         <h1 className="special-font champion-heading text-blue-100"><b>Sinister</b></h1>
                         <p className="mb-5 max-w-64 font-robertRegular text-blue-100">Decisive and lethal in combat <br /> Katarina is Noxus greatest assassin.</p>
                     
-                        <Button id="watch-trailer" title="Watch Trailer" leftIcon={TiLocationArrow} containerClass="!bg-yellow-300 flex-center gap-1"/>
+                        <Button 
+                            id="watch-trailer"
+                            title="Watch Trailer"
+                            leftIcon={<TiLocationArrow/>}
+                            containerClass="!bg-yellow-300 flex-center z-50 gap-1"
+                            onClick={(event) => {
+                                event.stopPropagation();
+                                window.open("https://www.youtube.com/watch?v=I76wvt0aEE4", "_blank");
+                            }}     
+                        />
                     </div>
                 </div>
             </div>
