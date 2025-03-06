@@ -141,7 +141,7 @@ const Champion = () => {
                             id="watch-trailer"
                             title="Watch Trailer"
                             leftIcon={<TiLocationArrow/>}
-                            containerClass="!bg-yellow-300 flex-center z-50 gap-1"
+                            containerClass="!bg-red-200 flex-center z-50 gap-1 text-blue-50"
                             onClick={(event) => {
                                 event.stopPropagation();
                                 window.open("https://www.youtube.com/watch?v=I76wvt0aEE4", "_blank");
