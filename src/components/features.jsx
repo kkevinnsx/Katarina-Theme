@@ -82,7 +82,7 @@ const Features = () => {
                 </ChampionTilt>
 
                 <div className="rounded-md grid h-[135vh] grid-cols-2 grid-rows-3 gap-7">
-                    <ChampionTilt className="border-hsla rounded-md row-span-2 md:col-span-1 md:row-span-2">
+                    <ChampionTilt className="border-hsla rounded-md row-span-2">
                         <ChampionCard 
                             src="videos/feature-2.mp4"
                             title={<b>Chosen wolf</b>}
@@ -91,7 +91,7 @@ const Features = () => {
                         />
                     </ChampionTilt>
 
-                    <ChampionTilt className="row-span-1 ms-32 md:col-span-1 md:ms-0">
+                    <ChampionTilt className="row-span-1">
                         <ChampionCard 
                             src="videos/feature-3.mp4"
                             title={<b>NOXUS</b>}
@@ -100,7 +100,7 @@ const Features = () => {
                         />
                     </ChampionTilt>
 
-                    <ChampionTilt className="row-span-1 me-14 md:col-span-1 md:me-0">
+                    <ChampionTilt className="row-span-1">
                         <ChampionCard 
                             src="videos/feature-4.mp4"
                             title={<b>Chibi</b>}

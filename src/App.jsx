@@ -3,6 +3,7 @@ import Champion from "./components/champion";
 import About from "./components/about";
 import NavBar from "./components/navbar";
 import Features from "./components/features";
+import Story from "./components/story";
 
 const App = () => {
   return(
@@ -11,6 +12,7 @@ const App = () => {
       <Champion />
       <About />
       <Features />
+      <Story />
     </main>
   )
 }

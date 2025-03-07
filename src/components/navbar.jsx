@@ -6,7 +6,7 @@ import gsap from "gsap";
 
 const navItems = ['Katarina', 'Noxus', 'Prologue', 'About', 'Contact'];
 const externalLinks = {
-    Katarina: "https://universe.leagueoflegends.com/pt_BR/champion/katarina/",
+    Katarina: "https://www.leagueoflegends.com/pt-br/champions/katarina/",
     Noxus: "https://universe.leagueoflegends.com/pt_BR/region/noxus/",
 }
 
