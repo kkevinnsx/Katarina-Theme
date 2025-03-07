@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
-import Button from "./button";
+import Button from "./Button";
 import { useGSAP } from "@gsap/react";
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/all";
