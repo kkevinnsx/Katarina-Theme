@@ -1,6 +1,40 @@
 import { TiLocationArrow } from "react-icons/ti";
+import { useState } from "react";
+import { useRef } from "react";
 
-const BentoCard = ({ src, title, description }) => {
+const ChampionTilt = ({children, className = ''}) => {
+    const [transformStyle, setTransformStyle] = useState('');
+    const itemRef = useRef();
+
+    const handleMouseMove = (e) => {
+        if(!itemRef.current) return;
+        const {left, top, width, height } = itemRef.current.getBoundingClientRect();
+        const relativeX = (e.clientX - left) / width;
+        const relativeY = (e.clientY - top)  / height;
+        const tiltX     = (relativeX - 0.5) * 5;
+        const tiltY     = (relativeY - 0.5) * 5;
+        const newTransform = `perspective(700px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(0.98, 0.98, 0.98)`
+
+        setTransformStyle(newTransform)
+    }
+ 
+    const handleMouseLeave = () => {
+        setTransformStyle('');
+    }
+    
+    return(
+        <div 
+            className={className}
+            ref={itemRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{transform: transformStyle}}>
+            {children}
+        </div>
+    )
+}
+
+const ChampionCard = ({ src, title, description }) => {
     return (
         <div className="relative size-full">
             <video
@@ -38,48 +72,48 @@ const Features = () => {
                     </p>
                 </div>
 
-                <div className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
-                    <BentoCard 
+                <ChampionTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
+                    <ChampionCard 
                         src="videos/feature-1.mp4"
                         title={<b>ASSASSIN</b>}
                         description="Katarina is capable of causing all sorts 
                         of twists and turns in battles, deciding the fate of the game."
                     />
-                </div>
+                </ChampionTilt>
 
-                <div className="grid h-[135vh] grid-cols-2 grid-rows-3 gap-7">
-                    <div className="row-span-2">
-                        <BentoCard 
+                <div className="rounded-md grid h-[135vh] grid-cols-2 grid-rows-3 gap-7">
+                    <ChampionTilt className="border-hsla rounded-md row-span-2 md:col-span-1 md:row-span-2">
+                        <ChampionCard 
                             src="videos/feature-2.mp4"
                             title={<b>Chosen wolf</b>}
                             description="The Wolf's Chosen is a new line of skins 
                             from Riot Games where Katarina was one of the protagonists"
                         />
-                    </div>
+                    </ChampionTilt>
 
-                    <div className="row-span-1">
-                        <BentoCard 
+                    <ChampionTilt className="row-span-1 ms-32 md:col-span-1 md:ms-0">
+                        <ChampionCard 
                             src="videos/feature-3.mp4"
                             title={<b>NOXUS</b>}
                             description="The Noxus region is known for being violent and
                             ruthless in war."
                         />
-                    </div>
+                    </ChampionTilt>
 
-                    <div className="row-span-1">
-                        <BentoCard 
+                    <ChampionTilt className="row-span-1 me-14 md:col-span-1 md:me-0">
+                        <ChampionCard 
                             src="videos/feature-4.mp4"
                             title={<b>Chibi</b>}
                             description="Katarina also received skin animations in the TFT game"
                         />
-                    </div>
+                    </ChampionTilt>
 
-                    <div className="bg-red-200 flex size-full flex-col justify-between p-5 text-blue-50">
+                    <ChampionTilt className="bg-red-200 flex size-full flex-col justify-between p-5 text-blue-50">
                         <h1 className="bento-title special-font max-w-64"><b>More coming soon!</b></h1>
                         <TiLocationArrow className="m-5 scale-[5] self-end" />
-                    </div>
+                    </ChampionTilt>
 
-                    <div className="row-span-1">
+                    <ChampionTilt className="row-span-1">
                         <video
                             src="videos/feature-5.mp4"
                             loop
@@ -87,7 +121,7 @@ const Features = () => {
                             autoPlay
                             className="size-full object-cover object-center"
                         />
-                    </div>
+                    </ChampionTilt>
                 </div>
             </div>
         </section>
